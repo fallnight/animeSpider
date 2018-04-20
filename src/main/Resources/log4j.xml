@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+<!-- /root/imgcrawler/logs -->
+    <appender name="pixiv" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="file" value="/root/imgcrawler/logs/pixiv.log" />
+		<param name="append" value="true" />
+		<param name="encoding" value="GBK" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%d{MMdd HH:mm:ss SSS\} %-5p] [%t] %c{3\} - %m%n" />
+		</layout>
+	</appender>
+
+    <logger name="org.apache" additivity="false">
+        <level value="info" />
+        <appender-ref ref="pixiv" />
+    </logger>
+
+    <root>
+        <level value="info" />
+        <appender-ref ref="pixiv" />
+    </root>
+
+</log4j:configuration>
