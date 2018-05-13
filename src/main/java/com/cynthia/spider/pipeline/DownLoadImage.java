@@ -14,6 +14,7 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Component;
 
 import com.cynthia.spider.dao.ImageDao;
@@ -28,7 +29,8 @@ public class DownLoadImage {
 	private ImageDao imageDao;
 	
 	private static String cookie;
-	static {
+	
+	public void getCookie() {
 		File file = new File(Constants.COOKIE_PATH + "/PivixCookie.dat");
 		BufferedInputStream input = null;
 		byte be[] = new byte[1024];
@@ -54,7 +56,9 @@ public class DownLoadImage {
 	}
 	
 	public void saveImage() {
-		
+		if(StringUtils.isBlank(cookie)) {
+			getCookie();
+		}
 		String isSaved = "0";
 		List<Image> images = imageDao.findImage(isSaved,10000);
 		
