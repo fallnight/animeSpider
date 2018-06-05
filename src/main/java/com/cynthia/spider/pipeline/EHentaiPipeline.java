@@ -24,7 +24,7 @@ public class EHentaiPipeline implements PageProcessor{
 	@Resource
 	private EhentaiDao ehentaiDao;
 	
-	private Site site = Site.me().setSleepTime(100).setTimeOut(3000)
+	private Site site = Site.me().setSleepTime(1500).setTimeOut(3000)
 			.setUserAgent("Mozilla/5.0 (Windows NT 10.0; WOW64; rv:45.0) Gecko/20100101 Firefox/45.0")
 			.setCycleRetryTimes(5);
 	
@@ -32,7 +32,7 @@ public class EHentaiPipeline implements PageProcessor{
 	
 	public void process(Page page) {
 		if(page.getUrl().toString().equals("https://e-hentai.org/")) {
-			for(int i = 0; i < 1; i ++) { 
+			for(int i = 0; i < 16051; i ++) { 
 				page.addTargetRequest("https://e-hentai.org/?page=" + i);
 			}
 		}

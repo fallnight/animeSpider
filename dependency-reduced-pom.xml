@@ -20,7 +20,7 @@
             <configuration>
               <transformers>
                 <transformer>
-                  <mainClass>com.cynthia.spider.PixivDailyCrawler</mainClass>
+                  <mainClass>com.cynthia.spider.EhentaiCrawler</mainClass>
                 </transformer>
                 <transformer>
                   <resource>META-INF/spring.handlers</resource>

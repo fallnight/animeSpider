@@ -99,7 +99,7 @@
 							<transformers>
 								<transformer
 									implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-									<mainClass>com.cynthia.spider.PixivDailyCrawler</mainClass>
+									<mainClass>com.cynthia.spider.EhentaiCrawler</mainClass>
 								</transformer>
 								<transformer
 									implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
